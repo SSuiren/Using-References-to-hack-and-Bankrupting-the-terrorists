@@ -1,0 +1,112 @@
+// Bankrupting terrorist.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+/*
+Taiquan Evans
+7/23/22
+*/
+
+#include <iostream>
+using namespace std;
+
+//allows for pause functions
+#include <chrono>
+
+//Blocks executions of the current thread for the time given.
+#include <thread>
+
+//allows the function to be called
+int Hacked_Accounts();
+
+//allows the function to be called
+int  Normal_Accounts();
+
+//allows the function to be called
+void Hacking(float& a, float& b);
+
+//variable for langleys money
+float Langleys_store = 32.23;
+added money
+
+//variable for terrorists money
+float Terrorists = 50000.65;
+
+//variable for agents name
+int name;
+
+//main fuction where everything happens
+int main()
+{
+    cout << "present name" << endl;
+    cin >> name;
+
+    cout << "welcome agent: " << name << ". you will be hacking the terrorist account ant tranfering all of there funds." << endl;
+
+    cout << "showing the accounts." << endl;
+    //shows original account money
+    cout << "Langley balance: " << Langleys_store << endl;
+    cout << "terrorists balance: " << Terrorists << endl;
+
+    //calls the function
+    Normal_Accounts();
+
+    cout << "good job, Now the terrorist are broke and langley can grow his shop." << endl;
+    cout << "we don't know if they will try anything else, so stay on the look out" << endl;
+    cout << "goodbye agent: " << name << endl;
+    
+    return 0;
+}
+//function for the normal transactions in the accounts
+int Normal_Accounts()
+{
+    cout << "langley is depositing." << endl;
+    //adds 23 to the variable langley
+    Langleys_store += 23;
+
+    cout << " The balences have changed." << endl;
+    cout << endl;
+    //shows added money
+    cout << "Langley balance: " << Langleys_store << endl;
+    cout << "terrorists balance: " << Terrorists << endl;
+    cout << endl;
+    cout << "alert!" << endl;
+    cout << "alert!" << endl;
+    cout << endl;
+    cout << "terrorist are adding money!" << endl;
+    cout << "hack the transaction and take everything they got!" << endl;
+
+    Hacked_Accounts();
+    return name;
+}
+//function where the accouts are switched
+int Hacked_Accounts()
+{
+
+    Terrorists += 10000.68;
+    cout << " interfering with transactions..." << endl;
+
+    //pause the code for 2 seconds
+    chrono::seconds dura(2);
+    this_thread::sleep_for(dura);
+
+    //calls the switch and swaps the money in the accounts
+    Hacking(Langleys_store, Terrorists);
+ 
+    cout << "Done! The money has been transfered to langley." << endl;
+    cout << "showing accounts..." << endl;
+
+    cout << endl;
+    //shows changed account information
+    cout << "Langley balance: " << Langleys_store << endl;
+    cout << "terrorists balance: " << Terrorists << endl;
+    return name;
+}
+//function for switching the money
+void Hacking(float& a, float& b)
+{
+    //attaches a placement to variable a
+   float temp = a;
+   //makes the to variables equal
+   a = b;
+   //switches the b variable with a
+   b = temp;
+}
